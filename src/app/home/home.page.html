@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <br>
+  <img center src="assets/img/duoc.png"/>
+  <br>
+  <ion-card center color="light">
+    <ion-card-header>
+      Datos de usuario
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label fixed>Email: </ion-label>
+          <ion-input #nombre></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Contraseña: </ion-label>
+          <ion-input #contrasena type="password"></ion-input>
+        </ion-item>  
+        <div *ngIf="mensaje;">
+          <h3 id="Error">   {{mensaje}}</h3>
+        </div>
+      </ion-list>
+        <ion-item>
+          <a [routerLink]="['/recuperar']">Recuperar contraseña</a>
+          <div padding>
+            <ion-button (click)="checkear(nombre, contrasena)" slot="end" color="primary">Ingresar</ion-button>
+          </div>
+        </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
+<ion-footer>
+
+</ion-footer>

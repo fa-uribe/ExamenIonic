@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Asignaturas<ion-icon name="school-outline"></ion-icon></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let aux of lista" [inset]="true">
+    <ion-card color="light">
+        <ion-card-header>
+          <a [routerLink]="(['/post/', aux.idAsig])">
+            <ion-label>{{aux.nombre}}</ion-label>
+          </a>
+        </ion-card-header>
+    </ion-card>
+  </ion-list>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="start" slot="fixed">
+  <ion-fab-button name="add"><ion-icon name="add-circle-outline"></ion-icon></ion-fab-button>
+  <ion-fab-list side="end">
+    <ion-fab-button (click)="takePhoto()">
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="cerrarSesion()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

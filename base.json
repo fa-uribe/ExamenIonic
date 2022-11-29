@@ -1,0 +1,135 @@
+{
+  "usuario": [
+    {
+      "id": 1,
+      "email":"email@email.com",
+      "clave":"1234",
+      "tipoU": 1
+    },
+    {
+      "id": 2,
+      "email":"email1@email.com",
+      "clave":"1234",
+      "tipoU": 1
+    },
+    {
+      "id": 3,
+      "email":"email2@email.com",
+      "clave":"1234",
+      "tipoU": 1
+    },
+    {
+      "id": 4,
+      "email":"email3@email.com",
+      "clave":"1234",
+      "tipoU": 2
+    },
+    {
+      "id": 5,
+      "email":"email4@email.com",
+      "clave":"1234",
+      "tipoU": 2
+    },
+    {
+      "id": 6,
+      "email":"email5@email.com",
+      "clave":"1234",
+      "tipoU": 2
+    }
+  ],
+  "alumno": [
+    {
+      "id": 1,
+      "nombre": "alumno1",
+      "apellidos": "apellido1",
+      "email": "email@email.com"
+    },
+    {
+      "id": 2,
+      "nombre": "alumno2",
+      "apellidos": "apellido2",
+      "email": "email1@email.com"
+    },
+    {
+      "id": 3,
+      "nombre": "alumno3",
+      "apellidos": "apellido3",
+      "email": "email2@email.com"
+    }
+  ],
+  "asignatura": [
+    {
+      "id": 1,
+      "seccion": "001",
+      "nombre": "asignatura1",
+      "idProf": 1,
+      "numClases": 0
+    },
+    {
+      "id": 2,
+      "seccion": "001",
+      "nombre": "asignatura2",
+      "idProf": 2,
+      "numClases": 0
+    },
+    {
+      "id": 3,
+      "seccion": "001",
+      "nombre": "asignatura3",
+      "idProf": 2,
+      "numClases": 0
+    }
+  ],
+  "profesor": [
+    {
+      "id": 1,
+      "nombre": "nombre1",
+      "apellido": "apellido1",
+      "email": "email3@email.com"
+    },
+    {
+      "id": 2,
+      "nombre": "nombre2",
+      "apellido": "apellido2",
+      "email": "email4@email.com"
+    },
+    {
+      "id": 3,
+      "nombre": "nombre3",
+      "apellido": "apellido3",
+      "email": "email5@email.com"
+    }
+  ],
+  "asignatura_alumno": [
+    {
+      "idAsig": 1,
+      "idAlumn": 1,
+      "nombre": "asignatura1",
+      "asistencia": 0
+    },
+    {
+      "idAsig": 2,
+      "idAlumn": 1,
+      "nombre": "asignatura2",
+      "asistencia": 0
+    },
+    {
+      "idAsig": 1,
+      "idAlumn": 3,
+      "nombre": "asignatura1",
+      "asistencia": 0
+    },
+    {
+      "idAsig": 2,
+      "idAlumn": 2,
+      "nombre": "asignatura2",
+      "asistencia": 0
+    },
+    {
+      "idAsig": 2,
+      "idAlumn": 3,
+      "nombre": "asignatura2",
+      "asistencia": 0
+    }
+  ]
+}

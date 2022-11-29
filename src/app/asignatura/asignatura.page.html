@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button><ion-icon name="arrow-back-outline"></ion-icon></ion-back-button>
+    </ion-buttons>
+    <ion-title><ion-icon name="book-outline"></ion-icon></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let aux of lista" [inset]="true">
+    <ion-card color="light">
+        <ion-card-header>
+            <ion-label>{{aux.nombre}}</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>Seccion: {{aux.seccion}}</ion-label>
+          <br>
+          <ion-label>Numero de clases: {{aux.numClases}}</ion-label>
+        </ion-card-content>
+          <ion-button (click)="crearQR(aux.seccion, aux.numClases)">Generar QR<ion-icon name="qr-code-outline"></ion-icon></ion-button>
+    </ion-card>
+  </ion-list>
+
+    <ion-card *ngIf="createdCode">
+      <ngx-qrcode [value]="createdCode" [width]="300"></ngx-qrcode>
+    </ion-card>
+
+</ion-content>

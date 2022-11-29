@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button><ion-icon name="arrow-back-outline"></ion-icon></ion-back-button>
+    </ion-buttons>
+    <ion-title><ion-icon name="book-outline"></ion-icon></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <ion-list *ngFor="let aux of lista" [inset]="true">
+      <ion-card color="light">
+          <ion-card-header>
+              <ion-label>{{aux.nombre}}</ion-label>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label>Seccion: {{aux.seccion}}</ion-label>
+            <br>
+            <ion-label>Numero de clases: {{aux.numClases}}</ion-label>
+          </ion-card-content>
+        <ion-button (click)="startScan()">Registrar asistencia<ion-icon name="qr-code-outline"></ion-icon></ion-button>
+      </ion-card>
+    </ion-list>
+  <ion-button expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
+    <ion-icon slot="start" name="refresh"></ion-icon>
+    Resetear
+   </ion-button>
+  <video #video [hidden]="!scanActive" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+  <ion-button expand="full" (click)="stopScan()" color="warning" *ngIf="scanActive">
+    <ion-icon slot="start" name="close"></ion-icon>
+    Parar Camara
+   </ion-button>
+   <ion-card *ngIf="scanResult">
+    <ion-card-header>
+      <ion-card-title>Codigo QR</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ scanResult }}
+    </ion-card-content>
+   </ion-card>
+
+  </ion-content>
+
+</ion-content>

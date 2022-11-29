@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recuperar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Email usuario</ion-label>
+    <ion-input #nombre></ion-input>
+  </ion-item>
+  <div *ngIf="mensaje;">
+    <h3 id="Error">   {{mensaje}}</h3>
+  </div> 
+  <br>
+  <ion-button (click)="checkear(nombre)" expand="block" color="primary">Recuperar</ion-button>
+  <ion-button [routerLink]="['/home']" expand="block" color="danger">Cancelar</ion-button>
+</ion-content>
+
