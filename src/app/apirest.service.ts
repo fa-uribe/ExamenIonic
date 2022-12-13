@@ -125,5 +125,9 @@ export class ApirestService {
     });
   }
 
+  async registrarAsist(idAs : Number, idAl: Number){
+    let url = this.urlBaseApi + 'asignatura_alumno/';
+  }
+
 }
 

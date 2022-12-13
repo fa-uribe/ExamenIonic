@@ -35,7 +35,8 @@ export class PostPage implements OnInit {
     private apiRest2: Api2Service,
     private barcodeScanner: BarcodeScanner,
     private toastCtrl: ToastController, 
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private storages : StoragesService
     ) { }
   
   ngAfterViewInit(){
@@ -74,7 +75,6 @@ export class PostPage implements OnInit {
     }
 
   async scan(){
-    console.log('SCAN');
     if(this.videoElement.readyState === this.videoElement.HAVE_ENOUGH_DATA){
       if(this.loading){
         await this.loading.dismiss();
@@ -99,11 +99,13 @@ export class PostPage implements OnInit {
       const code = jsQR(imageData.data, imageData.width,imageData.height,{
         inversionAttempts: 'dontInvert'
       });
-      console.log('code: ',code);
       if(code){
         this.scanActive = false;
         this.scanResult = code.data;
+        console.log(this.scanResult);
         this.showQrToast();
+        let ida =this.storages.leer('id');
+        this.apiRest2.registrarAsist(this.scanResult);
       }
       else{
         if(this.scanActive){

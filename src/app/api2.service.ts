@@ -127,7 +127,17 @@ export class Api2Service {
 
   async crearClase(idAsig: String, num: Number){
     let url = this.urlBaseApi + 'asignatura/' + idAsig;
-    return this.httpClient.put(url, {numClases: num})
+    this.httpClient.patch(url, {numClases: num}).subscribe(data => {
+      console.log(data['_body']);
+    }, error => {
+      console.log(error);
+    });;
+  }
+
+  async registrarAsist(idAs : Number){
+    let url = this.urlBaseApi + 'asignatura_alumno/';
+
+    this.httpClient.patch(url, {})
   }
 
 }

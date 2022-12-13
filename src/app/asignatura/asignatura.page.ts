@@ -29,8 +29,8 @@ export class AsignaturaPage implements OnInit {
     console.log(this.lista);
   }
 
-  crearQR(content : String, numC: number){
-    this.createdCode = content;
+  crearQR(content : Number, numC: number){
+    this.createdCode = content.toString();
     let clase = numC + 1;
     console.log(clase);
     this.api2.crearClase(this.ide, clase)

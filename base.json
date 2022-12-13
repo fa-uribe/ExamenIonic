@@ -2,38 +2,38 @@
   "usuario": [
     {
       "id": 1,
-      "email":"email@email.com",
-      "clave":"1234",
+      "email": "email@email.com",
+      "clave": "1234",
       "tipoU": 1
     },
     {
       "id": 2,
-      "email":"email1@email.com",
-      "clave":"1234",
+      "email": "email1@email.com",
+      "clave": "1234",
       "tipoU": 1
     },
     {
       "id": 3,
-      "email":"email2@email.com",
-      "clave":"1234",
+      "email": "email2@email.com",
+      "clave": "1234",
       "tipoU": 1
     },
     {
       "id": 4,
-      "email":"email3@email.com",
-      "clave":"1234",
+      "email": "email3@email.com",
+      "clave": "1234",
       "tipoU": 2
     },
     {
       "id": 5,
-      "email":"email4@email.com",
-      "clave":"1234",
+      "email": "email4@email.com",
+      "clave": "1234",
       "tipoU": 2
     },
     {
       "id": 6,
-      "email":"email5@email.com",
-      "clave":"1234",
+      "email": "email5@email.com",
+      "clave": "1234",
       "tipoU": 2
     }
   ],
@@ -66,11 +66,11 @@
       "numClases": 0
     },
     {
-      "id": 2,
-      "seccion": "001",
+      "seccion": "002",
       "nombre": "asignatura2",
+      "numClases": 2,
       "idProf": 2,
-      "numClases": 0
+      "id": 2
     },
     {
       "id": 3,
