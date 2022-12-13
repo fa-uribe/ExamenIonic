@@ -151,8 +151,6 @@ export class Api2Service {
             url2 += item['id'];
             clases = item['asistencia'];
             clases += 1;
-            console.log(url2);
-            console.log(clases);
             this.httpClient.patch(url2, {asistencia : clases}).subscribe(data => {
               console.log(data);
             }, error => {
