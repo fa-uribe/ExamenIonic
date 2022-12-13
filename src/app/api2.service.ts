@@ -128,16 +128,44 @@ export class Api2Service {
   async crearClase(idAsig: String, num: Number){
     let url = this.urlBaseApi + 'asignatura/' + idAsig;
     this.httpClient.patch(url, {numClases: num}).subscribe(data => {
-      console.log(data['_body']);
+      console.log(data);
     }, error => {
       console.log(error);
     });;
   }
 
-  async registrarAsist(idAs : Number){
-    let url = this.urlBaseApi + 'asignatura_alumno/';
+  async registrarAsist(idAs : Number, idAl: Number){
 
-    this.httpClient.patch(url, {})
+    let url = this.urlBaseApi + 'asignatura_alumno/';
+    let url2 = url;
+    let clases = 0;
+    this.listado = [];
+    return new Promise((resolve, rejects) => 
+    {
+      this.httpClient.get(url).subscribe((data:[]) =>
+      {
+        resolve(data);
+        data.forEach(item => { 
+          if(item['idAlumn'] == idAl && item['idAsig'] == idAs){
+            console.log(item['id']);
+            url2 += item['id'];
+            clases = item['asistencia'];
+            clases += 1;
+            console.log(url2);
+            console.log(clases);
+            this.httpClient.patch(url2, {asistencia : clases}).subscribe(data => {
+              console.log(data);
+            }, error => {
+              console.log(error);
+            });
+          }
+        })
+      },
+      error =>
+      {
+        console.log("Error en el servidor")
+      })
+    });
   }
 
 }

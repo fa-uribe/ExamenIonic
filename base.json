@@ -68,7 +68,7 @@
     {
       "seccion": "002",
       "nombre": "asignatura2",
-      "numClases": 6,
+      "numClases": 42,
       "idProf": 2,
       "id": 2
     },
@@ -77,7 +77,7 @@
       "seccion": "001",
       "nombre": "asignatura3",
       "idProf": 2,
-      "numClases": 0
+      "numClases": 1
     }
   ],
   "profesor": [
@@ -102,30 +102,35 @@
   ],
   "asignatura_alumno": [
     {
+      "id": 1,
       "idAsig": 1,
       "idAlumn": 1,
       "nombre": "asignatura1",
-      "asistencia": 0
+      "asistencia": 1
     },
     {
+      "id": 2,
       "idAsig": 2,
       "idAlumn": 1,
       "nombre": "asignatura2",
       "asistencia": 0
     },
     {
+      "id": 3,
       "idAsig": 1,
       "idAlumn": 3,
       "nombre": "asignatura1",
       "asistencia": 0
     },
     {
+      "id": 4,
       "idAsig": 2,
       "idAlumn": 2,
       "nombre": "asignatura2",
-      "asistencia": 0
+      "asistencia": 4
     },
     {
+      "id": 5,
       "idAsig": 2,
       "idAlumn": 3,
       "nombre": "asignatura2",

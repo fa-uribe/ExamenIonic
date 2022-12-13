@@ -117,9 +117,9 @@ export class PostPage implements OnInit {
         }
 
         else{
-          this.showQrToast();
-          let ida =this.storages.leer('id');
-          this.apiRest2.registrarAsist(this.scanResult);
+
+          const alumno = await this.storages.leer("id");
+          this.apiRest2.registrarAsist(this.scanResult, alumno);
         }
 
       }
@@ -141,21 +141,6 @@ export class PostPage implements OnInit {
 
   stopScan(){
     this.scanActive = false;
-  }
-
-  async showQrToast(){
-    const toast = await this.toastCtrl.create({
-    message: `Open ${this.scanResult}?`,
-    position: 'top',
-    buttons:[{
-      text: 'Open',
-      handler: () =>{
-        window.open(this.scanResult, '_system','location=yes');
-      }
-    }]
-    });
-
-    toast.present();
   }
 
 }
