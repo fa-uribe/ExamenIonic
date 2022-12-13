@@ -17,11 +17,11 @@
       <ion-list>
         <ion-item>
           <ion-label fixed>Email: </ion-label>
-          <ion-input #nombre></ion-input>
+          <ion-input #nombre id="txtEmail"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label fixed>Contraseña: </ion-label>
-          <ion-input #contrasena type="password"></ion-input>
+          <ion-input #contrasena id="txtClave" type="password"></ion-input>
         </ion-item>  
         <div *ngIf="mensaje;">
           <h3 id="Error">   {{mensaje}}</h3>
@@ -30,7 +30,7 @@
         <ion-item>
           <a [routerLink]="['/recuperar']">Recuperar contraseña</a>
           <div padding>
-            <ion-button (click)="checkear(nombre, contrasena)" slot="end" color="primary">Ingresar</ion-button>
+            <ion-button id="btnLogin" (click)="checkear(nombre, contrasena)" slot="end" color="primary">Ingresar</ion-button>
           </div>
         </ion-item>
     </ion-card-content>

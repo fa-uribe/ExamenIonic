@@ -41,16 +41,16 @@ export class HomePage implements OnInit {
     this.lista = this.apirest.listado.find(({email}) => email === nom.value);
  
     if(nom.value == "") {
-      this.mensaje = " Ingrese nombre de usuario";
+      this.mensaje = "Ingrese nombre de usuario";
     }
     else if(cont.value == "") {
-      this.mensaje = " Por favor, ingrese su contraseña";
+      this.mensaje = "Por favor, ingrese su contraseña";
     }
     else if(!this.apirest.listado.find(({email}) => email === nom.value)) {
-      this.mensaje = " Usuario no existe";
+      this.mensaje = "Usuario no existe";
     }
     else if(!this.apirest.listado.find(({clave}) => clave === cont.value)){
-      this.mensaje = " Contraseña incorrecta";
+      this.mensaje = "Contraseña incorrecta";
     }
     else if(this.lista['tipoU'] == 1){
 
