@@ -4,7 +4,7 @@ import { StoragesService } from '../storages.service';
 import { ApirestService } from '../apirest.service';
 import { Api2Service } from '../api2.service';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 import jsQR from 'jsqr';
 import { ViewChild } from '@angular/core'
 
@@ -36,7 +36,8 @@ export class PostPage implements OnInit {
     private barcodeScanner: BarcodeScanner,
     private toastCtrl: ToastController, 
     private loadingCtrl: LoadingController,
-    private storages : StoragesService
+    private storages : StoragesService,
+    private alertController: AlertController
     ) { }
   
   ngAfterViewInit(){
@@ -99,14 +100,30 @@ export class PostPage implements OnInit {
       const code = jsQR(imageData.data, imageData.width,imageData.height,{
         inversionAttempts: 'dontInvert'
       });
+
       if(code){
         this.scanActive = false;
         this.scanResult = code.data;
-        console.log(this.scanResult);
-        this.showQrToast();
-        let ida =this.storages.leer('id');
-        this.apiRest2.registrarAsist(this.scanResult);
+        if (this.ide != this.scanResult){
+          const alert = await this.alertController.create({
+            header: 'Error',
+            subHeader: 'Registrar asistencia',
+            message: 'El Codigo QR escaneado no corresponde a la asignatura seleccionada',
+            buttons: ['OK'],
+          });    
+          await alert.present();
+          this.scanResult=null;
+          this.stopScan();
+        }
+
+        else{
+          this.showQrToast();
+          let ida =this.storages.leer('id');
+          this.apiRest2.registrarAsist(this.scanResult);
+        }
+
       }
+
       else{
         if(this.scanActive){
           requestAnimationFrame(this.scan.bind(this));
